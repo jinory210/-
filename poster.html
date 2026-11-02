@@ -1,0 +1,134 @@
+<title>김윤신 작가 나들이</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700;800&family=IBM+Plex+Sans+KR:wght@400;500;700&display=swap">
+<style>
+/* Layout: A4 세로 포스터 한 장. 나무를 대각선으로 '자르고' 다시 '잇는' 김윤신 조각의 방식(合二合一 分二分一)을 화면 분할로 옮김. 의도적으로 단일 테마. */
+:root {
+  --ink: #1d1a17;        /* 먹빛 */
+  --wood: #c48a45;       /* 생나무 단면 */
+  --wood-deep: #8a5a2b;  /* 나이테 */
+  --cobalt: #2a44a6;     /* 채색 목조각의 파랑 */
+  --paper: #f7f5f1;      /* 종이 */
+  --ground: #e9e6e1;     /* 화면 바탕 */
+  --display: "Nanum Myeongjo", "Noto Serif KR", "Apple SD Gothic Neo", serif;
+  --body: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  color-scheme: light;
+}
+body {
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 24px;
+}
+.poster {
+  container-type: inline-size;
+  width: min(100%, 620px);
+  max-width: 100%;
+  aspect-ratio: 210 / 297;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  background: var(--paper);
+  box-shadow: 0 10px 40px rgb(29 26 23 / .18);
+}
+/* 나무 블록 두 조각: 잘린 면이 서로 맞물림 */
+.cut-a, .cut-b { position: absolute; inset: 0; }
+.cut-a {
+  background:
+    repeating-radial-gradient(circle at 115% -10%, transparent 0 2.2cqw, rgb(138 90 43 / .22) 2.2cqw 2.45cqw),
+    var(--wood);
+  clip-path: polygon(0 0, 100% 0, 100% 34%, 0 52%);
+}
+.cut-b {
+  background: var(--cobalt);
+  clip-path: polygon(100% 37%, 100% 41%, 0 59%, 0 55%);
+}
+.content {
+  position: absolute; inset: 0;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  padding: 7cqw 7cqw 6cqw;
+}
+.eyebrow {
+  font-size: 3cqw; font-weight: 700; letter-spacing: .12em;
+  color: var(--ink);
+  display: flex; justify-content: space-between; gap: 2cqw; flex-wrap: wrap;
+}
+.title {
+  font-family: var(--display); font-weight: 800;
+  font-size: 15cqw; line-height: 1.02; letter-spacing: -.02em;
+  margin: 5cqw 0 0; text-wrap: balance;
+}
+.title small { display: block; font-size: 6cqw; font-weight: 700; letter-spacing: 0; margin-bottom: 1.5cqw; }
+.hanja { font-family: var(--display); font-size: 3.4cqw; margin-top: 3cqw; letter-spacing: .3em; color: var(--ink); opacity: .8; }
+
+.lower { align-self: end; display: grid; gap: 4.5cqw; }
+.lead { font-size: 3.3cqw; line-height: 1.65; max-width: 62cqw; margin: 0; }
+.facts { display: grid; grid-template-columns: 15cqw 1fr; row-gap: 2.2cqw; margin: 0; }
+.facts dt { font-size: 2.8cqw; font-weight: 700; letter-spacing: .1em; color: var(--cobalt); padding-top: .9cqw; }
+.facts dd { margin: 0; font-size: 4.2cqw; font-weight: 500; line-height: 1.35; font-variant-numeric: tabular-nums; }
+.facts dd b { font-family: var(--display); font-size: 6.6cqw; font-weight: 800; }
+
+.foot {
+  display: flex; justify-content: space-between; align-items: end; gap: 4cqw;
+  border-top: .35cqw solid var(--ink); padding-top: 3.5cqw; margin-top: 4.5cqw;
+}
+.apply { font-size: 3cqw; line-height: 1.6; }
+.apply strong { display: block; font-size: 4.2cqw; }
+.qr {
+  width: 20cqw; aspect-ratio: 1; max-width: 100%; flex: none;
+  background: #fff; padding: 1.2cqw; display: grid; place-items: center;
+  border: .35cqw solid var(--ink);
+  font-size: 2.2cqw; text-align: center; line-height: 1.4; color: var(--wood-deep);
+}
+.qr img, .qr canvas { width: 100% !important; height: auto !important; }
+
+@media print {
+  @page { size: A4; margin: 0; }
+  body { background: #fff; padding: 0; }
+  .poster { width: 210mm; box-shadow: none; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+</style>
+
+<article class="poster" aria-label="김윤신 작가 나들이 포스터">
+  <div class="cut-a" aria-hidden="true"></div>
+  <div class="cut-b" aria-hidden="true"></div>
+  <div class="content">
+    <div class="eyebrow"><span>경기예술인의집</span><span>나들이 프로그램</span></div>
+    <div>
+      <h1 class="title"><small>조각가</small>김윤신<br>작가 나들이</h1>
+      <div class="hanja">合二合一 分二分一</div>
+    </div>
+    <div class="lower">
+      <p class="lead">나무를 자르고 다시 이어 하나의 형상을 만드는 조각가 김윤신. 그 작업의 세계를 가까이에서 만나는 늦가을 나들이에 예술인 여러분을 초대합니다.</p>
+      <dl class="facts">
+        <dt>일시</dt><dd><b>11.26</b> 목요일<br>오후 1시 – 2시</dd>
+        <dt>장소</dt><dd>경기도 파주시 문발로 123</dd>
+        <dt>대상</dt><dd>경기예술인의집 예술인</dd>
+      </dl>
+      <div class="foot">
+        <div class="apply">
+          <strong>구글폼으로 참가 신청</strong>
+          QR코드를 찍어 신청해 주세요<br>
+          신청 마감 11월 20일(금) · 선착순
+        </div>
+        <div class="qr" id="qr">구글폼 링크를<br>넣으면<br>QR 생성</div>
+      </div>
+    </div>
+  </div>
+</article>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+  // 구글폼을 만든 뒤 나온 링크를 아래 따옴표 안에 붙여 넣으면 QR코드가 자동으로 생깁니다.
+  const FORM_URL = "";
+  if (FORM_URL && window.QRCode) {
+    const box = document.getElementById("qr");
+    box.textContent = "";
+    new QRCode(box, { text: FORM_URL, width: 256, height: 256, correctLevel: QRCode.CorrectLevel.M });
+  }
+</script>
